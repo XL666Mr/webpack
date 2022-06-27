@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { VueLoaderPlugin } = require('vue-loader')
 // const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   mode: "development",
@@ -8,6 +9,7 @@ module.exports = {
       template: "./public/index.html",
       filename: "index.html",
     }),
+    new VueLoaderPlugin()
   ],
   devServer: {
     port: 3000,
@@ -16,24 +18,17 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", 'vue-style-loader', "css-loader"],
       },
       {
         test: /\.less$/,
         use: ["style-loader", "css-loader", "less-loader"],
       },
-      //   { //webpack4版本
-      //     test: /\.(png|jpg|gif|jpeg)$/i,
-      //     use: [
-      //       {
-      //         loader: 'url-loader',
-      //         options: {
-      //           limit: 8 * 1024,
-      //         },
-      //       },
-      //     ],
-      //   }
       {
         //webpack5版本
         test: /\.(png|jpg|gif|jpeg)$/i,
