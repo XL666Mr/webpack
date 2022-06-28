@@ -1,14 +1,9 @@
 <template>
-  <div>count</div>
+  <div id="app">adppp</div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      count: 0,
-    };
-  },
 };
 </script>
 

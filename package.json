@@ -13,6 +13,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.5",
     "@babel/preset-env": "^7.18.2",
+    "@vue/compiler-sfc": "^3.2.37",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
@@ -30,6 +31,6 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.2.36"
   }
 }
